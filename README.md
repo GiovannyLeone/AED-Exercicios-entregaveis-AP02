@@ -1,99 +1,91 @@
-## 🚀 Estruturas de Dados em Java: TDA Lista, Pilha e Fila
+## 📚 Implementação de Tipos Abstratos de Dados (TDA) em Java
 
-Este projeto é uma implementação didática de três Tipos Abstratos de Dados (TDA) fundamentais: Lista, Pilha e Fila. O objetivo é demonstrar o funcionamento e as restrições de cada estrutura, conforme especificado na lista de exercícios da disciplina.
+### Arquitetura de Pacotes: Lista, Pilha e Fila
 
------
-
-### 📋 Requisitos do Projeto
-
-O projeto resolve os 5 exercícios propostos, implementando as estruturas baseadas em vetores (simulados por `ArrayList` em Java), com capacidade máxima definida e um menu interativo de testes.
-
-| \# | TDA | Funcionalidades Implementadas | Restrições |
-| :---: | :--- | :--- | :--- |
-| **1** | **Lista** | `inserir(int valor)`, `mostrar()` | Máximo de **5** elementos. |
-| **2** | **Pilha** | `empilhar(int valor)`, `desempilhar()`, `mostrar()` | LIFO (Last-In, First-Out), Máximo de **5** elementos. |
-| **3** | **Fila** | `enfileirar(int valor)`, `desenfileirar()`, `mostrar()` | FIFO (First-In, First-Out), Máximo de **5** elementos. |
-| **4** | **Geral** | Método `mostrar()` em todas as classes. | Exibe o estado atual da estrutura. |
-| **5** | **Principal** | Menu Interativo | Interface de linha de comando para testar as estruturas. |
+Este projeto demonstra a implementação de três Tipos Abstratos de Dados (TDA) fundamentais: **Lista**, **Pilha (Stack)** e **Fila (Queue)**, organizados sob uma arquitetura de pacotes modular. O objetivo é simular o comportamento e as restrições de estruturas baseadas em vetor (capacidade limitada), encapsulando a lógica de cada TDA em seu próprio arquivo.
 
 -----
 
-### 💻 Como Executar o Projeto
+### 📦 Estrutura de Arquivos e Organização
 
-Este projeto foi desenvolvido em Java e pode ser compilado e executado em qualquer ambiente que suporte o Java 17 ou superior (incluindo o Java 21).
-
-#### 1\. Estrutura de Arquivos
-
-O código está contido em um único arquivo chamado `Principal.java`, utilizando classes aninhadas estáticas para organizar os TDAs.
+O projeto utiliza uma estrutura de pacotes padrão Java, separando a lógica de negócios (TDAs) da camada de execução (`Principal`).
 
 ```
-.
-└── src/
-    └── Principal.java
+src/
+├── TAD/
+│   ├── Fila.java     // Implementação TDA Fila (FIFO, Máx 5)
+│   ├── Lista.java    // Implementação TDA Lista (Máx 5)
+│   └── Pilha.java    // Implementação TDA Pilha (LIFO, Máx 5)
+│
+├── Interface.java    // (Presumível: Define o contrato/métodos comuns - Não usada neste modelo)
+└── Principal.java    // Classe Principal com o menu interativo de testes
 ```
 
-#### 2\. Compilação e Execução
+### 📋 Requisitos e Solução dos Exercícios
 
-Abra o terminal na pasta raiz do projeto (`src/`) e use os seguintes comandos:
+Todas as restrições do enunciado foram atendidas, incluindo a capacidade limitada de 5 elementos e a implementação do método `mostrar()` em todas as estruturas.
+
+| TDA | Arquivo | Funcionalidades Principais | Princípio de Acesso | Restrição de Capacidade |
+| :---: | :--- | :--- | :--- | :---: |
+| **Lista** | `TAD/Lista.java` | `inserir(valor)`, `mostrar()` | Sequencial | Máximo: **5** |
+| **Pilha** | `TAD/Pilha.java` | `empilhar(valor)`, `desempilhar()`, `mostrar()` | LIFO | Máximo: **5** |
+| **Fila** | `TAD/Fila.java` | `enfileirar(valor)`, `desenfileirar()`, `mostrar()` | FIFO | Máximo: **5** |
+
+-----
+
+### 🛠️ Detalhes da Implementação Técnica
+
+As classes no pacote `TAD` utilizam `java.util.ArrayList<Integer>` como mecanismo interno de armazenamento, mas simulam o comportamento de um vetor de tamanho fixo através de controle de fluxo e exceções.
+
+#### 1\. Encapsulamento e Controle de Fluxo
+
+* **Capacidade Fixa:** O limite de 5 elementos é imposto nos métodos de inserção (`inserir`, `empilhar`, `enfileirar`) através da verificação do `size()` do `ArrayList`.
+* **Tratamento de Erros:** O código utiliza `try-catch` para capturar e reportar explicitamente situações como *Estrutura Cheia* ou *Estrutura Vazia* (ex: ao tentar `desempilhar` uma pilha vazia).
+
+#### 2\. Implementação LIFO e FIFO
+
+A correta aplicação dos princípios de acesso é garantida pelo uso estratégico dos métodos de manipulação de extremidades do `ArrayList`:
+
+| TDA | Operação | Método do `ArrayList` Utilizado |
+| :---: | :--- | :--- |
+| **Pilha (LIFO)** | `desempilhar()` | `removeLast()` |
+| **Fila (FIFO)** | `desenfileirar()` | `removeFirst()` |
+
+-----
+
+### 🚀 Execução e Testes
+
+A classe `Principal.java` contém o método `main` e o menu interativo para testar as estruturas de forma isolada.
+
+#### Pré-requisitos
+
+* Java Development Kit (JDK) 17 ou superior.
+
+#### Instruções de Compilação e Execução
+
+Para compilar e executar um projeto com pacotes, você deve usar o terminal na raiz do diretório `src/`:
 
 ```bash
-# 1. Compilação
-javac Principal.java
+# 1. Compilar os arquivos (incluindo o pacote TAD)
+javac TAD/*.java Principal.java
 
-# 2. Execução
+# 2. Executar o programa
 java Principal
 ```
 
-Ao executar, o programa iniciará o menu interativo no console.
+#### Menu Interativo (`Principal`)
+
+A classe `Principal` permite ao usuário selecionar qual TDA testar, guiando as operações de inserção, remoção e visualização.
 
 -----
 
-### 📖 Guia de Uso do Menu Interativo
+### 👨‍🏫 Informações do Aluno
 
-O menu permite que você escolha qual estrutura de dados deseja testar, executando as operações específicas de cada TDA.
-
-#### Menu Principal
-
-```
-===========================================
---- Menu Interativo TDA Estruturas de Dados ---
-===========================================
-1. Testar LISTA (Máx: 5 elementos)
-2. Testar PILHA (LIFO)
-3. Testar FILA (FIFO, Máx: 5 elementos)
-0. Sair do Programa
-```
-
-#### Exemplo de Teste (Pilha)
-
-1.  Selecione a opção **2 (Testar PILHA)**.
-2.  No menu da pilha, selecione **1 (Empilhar)** e insira um valor (Ex: `10`).
-3.  Repita o passo 2 (Ex: `20`).
-4.  Selecione **3 (Mostrar estado)**. O resultado deve ser `[10, 20]`, onde `20` é o topo.
-5.  Selecione **2 (Desempilhar)**. O valor `20` será removido.
-6.  Selecione **3 (Mostrar estado)**. O resultado deve ser `[10]`.
+| Detalhe | Valor |
+| :--- | :--- |
+| **Autor** | Giovanny Leone |
+| **RA** | 2402464 |
+| **Curso** | Ciência da Computação |
+| **Disciplina** | TDA Estruturas de Dados em Java |
 
 -----
-
-### 🛠️ Detalhes da Implementação
-
-As classes utilizam a classe `java.util.ArrayList` para simular o comportamento de um vetor de armazenamento, mas impõem as regras de capacidade máxima e as lógicas de inserção/remoção (FIFO, LIFO) através de métodos customizados e tratamento de exceções (`try-catch`).
-
-| TDA | Operação de Inserção | Operação de Remoção | Limite |
-| :--- | :--- | :--- | :--- |
-| **Lista** | `arrayLista.add(valor)` | N/A (Não possui) | **5** (Imposto por verificação `size()`) |
-| **Pilha** | `arrayPilha.add(valor)` (PUSH) | `arrayPilha.removeLast()` (POP) | **5** (Imposto por verificação `size()`) |
-| **Fila** | `arrayFila.add(valor)` (ENQUEUE) | `arrayFila.removeFirst()` (DEQUEUE) | **5** (Imposto por verificação `size()`) |
-
------
-
-### 👤 Autor
-
-* **Professor:** Odair Gabriel
-* **Autor:** Giovanny Leone
-* **RA:** 2402464
-* **Curso:** Ciência da Computação – Noite | 3º Semestre Turma A
-
------
-
-*Desenvolvido como parte dos estudos de Estruturas de Dados em Java.*

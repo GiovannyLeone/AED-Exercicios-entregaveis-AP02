@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Interface {
     // Instâncias das classes TAD para serem usadas no menu
-    private static Principal.Lista lista = new Principal.Lista();
-    private static Principal.Pilha pilha = new Principal.Pilha();
-    private static Principal.Fila fila = new Principal.Fila();
+    private static TAD.Lista lista = new TAD.Lista();
+    private static TAD.Pilha pilha = new TAD.Pilha();
+    private static TAD.Fila fila = new TAD.Fila();
     private static Scanner scanner = new Scanner(System.in);
 
     static void exibirMenuPrincipal() {
