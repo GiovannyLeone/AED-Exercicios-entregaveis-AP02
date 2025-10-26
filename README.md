@@ -1,5 +1,3 @@
-Claro\! Criarei um `README.md` completo e bem formatado, utilizando Markdown para um visual limpo e bonito, cobrindo todos os detalhes do seu projeto de Tipos Abstratos de Dados (TDA) em Java.
-
 ## 🚀 Estruturas de Dados em Java: TDA Lista, Pilha e Fila
 
 Este projeto é uma implementação didática de três Tipos Abstratos de Dados (TDA) fundamentais: Lista, Pilha e Fila. O objetivo é demonstrar o funcionamento e as restrições de cada estrutura, conforme especificado na lista de exercícios da disciplina.
