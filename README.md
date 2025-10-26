@@ -13,9 +13,9 @@ O projeto utiliza uma estrutura de pacotes padrão Java, separando a lógica de 
 ```
 src/
 ├── TAD/
-│   ├── Fila.java     // Implementação TDA Fila (FIFO, Máx 5)
-│   ├── Lista.java    // Implementação TDA Lista (Máx 5)
-│   └── Pilha.java    // Implementação TDA Pilha (LIFO, Máx 5)
+│   ├── Fila.java     // Implementação TAD Fila (FIFO, Máx 5)
+│   ├── Lista.java    // Implementação TAD Lista (Máx 5)
+│   └── Pilha.java    // Implementação TAD Pilha (LIFO, Máx 5)
 │
 ├── Interface.java    // (Presumível: Define o contrato/métodos comuns - Não usada neste modelo)
 └── Principal.java    // Classe Principal com o menu interativo de testes
