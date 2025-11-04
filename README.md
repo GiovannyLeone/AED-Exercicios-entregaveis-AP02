@@ -1,14 +1,14 @@
-## 📚 Implementação de Tipos Abstratos de Dados (TDA) em Java
+## 📚 Implementação de Tipos Abstratos de Dados (TAD) em Java
 
 ### Arquitetura de Pacotes: Lista, Pilha e Fila
 
-Este projeto demonstra a implementação de três Tipos Abstratos de Dados (TDA) fundamentais: **Lista**, **Pilha (Stack)** e **Fila (Queue)**, organizados sob uma arquitetura de pacotes modular. O objetivo é simular o comportamento e as restrições de estruturas baseadas em vetor (capacidade limitada), encapsulando a lógica de cada TDA em seu próprio arquivo.
+Este projeto demonstra a implementação de três Tipos Abstratos de Dados (TAD) fundamentais: **Lista**, **Pilha (Stack)** e **Fila (Queue)**, organizados sob uma arquitetura de pacotes modular. O objetivo é simular o comportamento e as restrições de estruturas baseadas em vetor (capacidade limitada), encapsulando a lógica de cada TAD em seu próprio arquivo.
 
 -----
 
 ### 📦 Estrutura de Arquivos e Organização
 
-O projeto utiliza uma estrutura de pacotes padrão Java, separando a lógica de negócios (TDAs) da camada de execução (`Principal`).
+O projeto utiliza uma estrutura de pacotes padrão Java, separando a lógica de negócios (TADs) da camada de execução (`Principal`).
 
 ```
 src/
@@ -25,11 +25,11 @@ src/
 
 Todas as restrições do enunciado foram atendidas, incluindo a capacidade limitada de 5 elementos e a implementação do método `mostrar()` em todas as estruturas.
 
-| TDA | Arquivo | Funcionalidades Principais | Princípio de Acesso | Restrição de Capacidade |
-| :---: | :--- | :--- | :--- | :---: |
+|     TAD     | Arquivo | Funcionalidades Principais | Princípio de Acesso | Restrição de Capacidade |
+|:---------:| :--- | :--- | :--- | :---: |
 | **Lista** | `TAD/Lista.java` | `inserir(valor)`, `mostrar()` | Sequencial | Máximo: **5** |
 | **Pilha** | `TAD/Pilha.java` | `empilhar(valor)`, `desempilhar()`, `mostrar()` | LIFO | Máximo: **5** |
-| **Fila** | `TAD/Fila.java` | `enfileirar(valor)`, `desenfileirar()`, `mostrar()` | FIFO | Máximo: **5** |
+| **Fila**  | `TAD/Fila.java` | `enfileirar(valor)`, `desenfileirar()`, `mostrar()` | FIFO | Máximo: **5** |
 
 -----
 
@@ -46,10 +46,10 @@ As classes no pacote `TAD` utilizam `java.util.ArrayList<Integer>` como mecanism
 
 A correta aplicação dos princípios de acesso é garantida pelo uso estratégico dos métodos de manipulação de extremidades do `ArrayList`:
 
-| TDA | Operação | Método do `ArrayList` Utilizado |
-| :---: | :--- | :--- |
+|        TAD         | Operação | Método do `ArrayList` Utilizado |
+|:----------------:| :--- | :--- |
 | **Pilha (LIFO)** | `desempilhar()` | `removeLast()` |
-| **Fila (FIFO)** | `desenfileirar()` | `removeFirst()` |
+| **Fila (FIFO)**  | `desenfileirar()` | `removeFirst()` |
 
 -----
 
@@ -75,17 +75,17 @@ java Principal
 
 #### Menu Interativo (`Principal`)
 
-A classe `Principal` permite ao usuário selecionar qual TDA testar, guiando as operações de inserção, remoção e visualização.
+A classe `Principal` permite ao usuário selecionar qual TAD testar, guiando as operações de inserção, remoção e visualização.
 
 -----
 
 ### 👨‍🏫 Informações do Aluno
 
-| Detalhe | Valor |
-| :--- | :--- |
-| **Autor** | Giovanny Leone |
-| **RA** | 2402464 |
-| **Curso** | Ciência da Computação |
-| **Disciplina** | TDA Estruturas de Dados em Java |
+| Detalhe | Valor                         |
+| :--- |:------------------------------|
+| **Autor** | Giovanny Leone                |
+| **RA** | 2402464                       |
+| **Curso** | Ciência da Computação         |
+| **Disciplina** | TAD Estruturas de Dados em Java |
 
 -----
